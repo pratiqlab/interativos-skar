@@ -1,0 +1,43 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "eslint.config.mjs": true,
+        ".next": true,
+        ".vscode": true,
+        "node_modules": true,
+        ".gitignore": true,
+        "components.json": true,
+        "next-env.d.ts": true,
+        "next.config.ts": true,
+        "package-lock.json": true,
+        "package.json": true,
+        "postcss.config.mjs": true,
+        "TEMPLATE_README.md": true,
+        "tsconfig.json": true,
+        "src/lib": true,
+        "src/hooks": true,
+        "public": true
+    },
+    "css.validate": false,
+    "hide-files.files": [
+        ".next",
+        ".vscode",
+        "node_modules",
+        ".gitignore",
+        "components.json",
+        "next-env.d.ts",
+        "next.config.ts",
+        "package-lock.json",
+        "package.json",
+        "postcss.config.mjs",
+        "TEMPLATE_README.md",
+        "tsconfig.json",
+        "src/lib",
+        "src/hooks",
+        "public"
+    ]
+}

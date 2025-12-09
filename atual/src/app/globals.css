@@ -1,0 +1,768 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+  --card: #ffffff;
+  --card-foreground: #333333;
+  --popover: #ffffff;
+  --popover-foreground: #333333;
+  --primary: #1c255f;
+  --primary-foreground: #ffffff;
+  --secondary: #3a698d;
+  --secondary-foreground: #ffffff;
+  --muted: #f9fafb;
+  --muted-foreground: #6b7280;
+  --accent: #e33f24;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #dcdfe2;
+  --input: #f4f5f7;
+  --ring: #1c255f;
+  --chart-1: #3a698d;
+  --chart-2: #e33f24;
+  --chart-3: #1c255f;
+  --chart-4: #5a7ca6;
+  --chart-5: #86a7c8;
+  --sidebar: #f5f5f5;
+  --sidebar-foreground: #333333;
+  --sidebar-primary: #1c255f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e33f24;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #1c255f;
+  --font-sans: Inter, sans-serif;
+  --font-serif: Source Serif 4, serif;
+  --font-mono: JetBrains Mono, monospace;
+  --radius: 0.75rem;
+  --shadow-x: 0px;
+  --shadow-y: 1px;
+  --shadow-blur: 3px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.1;
+  --shadow-color: hsl(0 0% 0%);
+  --shadow-2xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 1px 3px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow: 0px 1px 3px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow-md: 0px 1px 3px 0px hsl(0 0% 0% / 0.10), 0px 2px 4px -1px hsl(0 0% 0% / 0.10);
+  --shadow-lg: 0px 1px 3px 0px hsl(0 0% 0% / 0.10), 0px 4px 6px -1px hsl(0 0% 0% / 0.10);
+  --shadow-xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.10), 0px 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-2xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.25);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: #1a1f2e;
+  --foreground: #d4d4d8;
+  --card: #252a3a;
+  --card-foreground: #d4d4d8;
+  --popover: #252a3a;
+  --popover-foreground: #d4d4d8;
+  --primary: #5a8ab8;
+  --primary-foreground: #ffffff;
+  --secondary: #3a4a60;
+  --secondary-foreground: #d4d4d8;
+  --muted: #2a2f40;
+  --muted-foreground: #9ca3af;
+  --accent: #e8705f;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #3a3f50;
+  --input: #2a2f40;
+  --ring: #5a8ab8;
+  --chart-1: #5a8ab8;
+  --chart-2: #e8705f;
+  --chart-3: #3a698d;
+  --chart-4: #6a94b8;
+  --chart-5: #86a7c8;
+  --sidebar: #252a3a;
+  --sidebar-foreground: #d4d4d8;
+  --sidebar-primary: #5a8ab8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8705f;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #3a3f50;
+  --sidebar-ring: #5a8ab8;
+  --font-sans: Inter, sans-serif;
+  --font-serif: Source Serif 4, serif;
+  --font-mono: JetBrains Mono, monospace;
+  --radius: 0.75rem;
+  --shadow-x: 0px;
+  --shadow-y: 1px;
+  --shadow-blur: 3px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.1;
+  --shadow-color: hsl(0 0% 0%);
+  --shadow-2xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 1px 3px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow: 0px 1px 3px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow-md: 0px 1px 3px 0px hsl(0 0% 0% / 0.10), 0px 2px 4px -1px hsl(0 0% 0% / 0.10);
+  --shadow-lg: 0px 1px 3px 0px hsl(0 0% 0% / 0.10), 0px 4px 6px -1px hsl(0 0% 0% / 0.10);
+  --shadow-xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.10), 0px 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-2xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-success: #22c55e;
+  --color-success-foreground: #ffffff;
+  --color-markdown-normal: var(--foreground);
+  --color-markdown-highlight: var(--primary);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+  --font-logo: var(--font-logo);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    overscroll-behavior: none;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overscroll-behavior: none;
+  }
+
+  /* Custom Scrollbar */
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  html::-webkit-scrollbar-track,
+  body::-webkit-scrollbar-track,
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  html::-webkit-scrollbar-thumb,
+  body::-webkit-scrollbar-thumb,
+  *::-webkit-scrollbar-thumb {
+    background: rgba(28, 37, 95, 0.3);
+    border-radius: 3px;
+    transition: background 0.2s ease;
+  }
+
+  .dark html::-webkit-scrollbar-thumb,
+  .dark body::-webkit-scrollbar-thumb,
+  .dark *::-webkit-scrollbar-thumb {
+    background: rgba(90, 138, 184, 0.3);
+  }
+
+  html::-webkit-scrollbar-thumb:hover,
+  body::-webkit-scrollbar-thumb:hover,
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(28, 37, 95, 0.5);
+  }
+
+  .dark html::-webkit-scrollbar-thumb:hover,
+  .dark body::-webkit-scrollbar-thumb:hover,
+  .dark *::-webkit-scrollbar-thumb:hover {
+    background: rgba(90, 138, 184, 0.5);
+  }
+
+  html::-webkit-scrollbar-button,
+  body::-webkit-scrollbar-button,
+  *::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+
+  html::-webkit-scrollbar-corner,
+  body::-webkit-scrollbar-corner,
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Firefox */
+  html,
+  body,
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(28, 37, 95, 0.3) transparent;
+  }
+
+  .dark html,
+  .dark body,
+  .dark * {
+    scrollbar-color: rgba(90, 138, 184, 0.3) transparent;
+  }
+}
+
+
+
+/* === Markdown, KaTeX e HTML customizados === */
+
+/* =========================
+   1. Estrutura geral do markdown
+   ========================= */
+   .markdown-theme {
+    @apply prose max-w-none text-markdown-normal;
+    }
+
+    /* Remove margin-top do primeiro elemento para evitar espaçamento indesejado no topo */
+    .markdown-theme > *:first-child {
+      @apply mt-0;
+    }
+
+    /* Remove margin-bottom do último elemento para evitar espaçamento indesejado embaixo */
+    .markdown-theme > *:last-child {
+      @apply mb-0;
+  }
+  
+  /* =========================
+       2. Parágrafos
+       ========================= */
+  .markdown-theme p {
+    @apply my-4;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  
+  /* =========================
+       3. Títulos
+       ========================= */
+  .markdown-theme h1,
+  .markdown-theme h2,
+  .markdown-theme h3,
+  .markdown-theme h4,
+  .markdown-theme h5,
+  .markdown-theme h6 {
+    @apply text-markdown-highlight border-markdown-highlight font-logo text-left;
+  }
+  
+  /* =========================
+       4. Texto em destaque
+       ========================= */
+  .markdown-theme strong {
+    @apply text-markdown-highlight border-markdown-highlight;
+  }
+  
+  /* =========================
+         5. Tabelas
+         ========================= */
+  
+  /* Container da tabela com sombra e bordas arredondadas */
+  .markdown-theme table {
+    @apply w-full border-collapse my-8 shadow-lg rounded-xl bg-card relative overflow-hidden;
+  }
+  
+  /* Scroll horizontal apenas no mobile */
+  @media (max-width: 1023px) {
+    .markdown-theme table {
+      @apply block overflow-x-auto whitespace-nowrap;
+    }
+  }
+  
+  /* Cabeçalho da tabela */
+  .markdown-theme th {
+    @apply border-r border-border/30 px-6 py-4 text-markdown-highlight bg-gradient-to-b from-primary/10 to-primary/5 text-center font-bold text-sm uppercase tracking-wide hover:bg-primary/30 cursor-pointer relative border-b-2 border-primary/20 outline-none;
+  }
+  
+  /* Bordas arredondadas específicas para o cabeçalho */
+  .markdown-theme th:first-child {
+    @apply border-l-0;
+  }
+  
+  .markdown-theme th:last-child {
+    @apply border-r-0;
+  }
+  
+  /* Células do corpo da tabela */
+  .markdown-theme td {
+    @apply border-r border-border/20 px-6 py-4 text-markdown-normal cursor-pointer relative border-b border-border/10 outline-none;
+  }
+  
+  /* Bordas laterais específicas para células */
+  .markdown-theme td:first-child {
+    @apply border-l-0;
+  }
+  
+  .markdown-theme td:last-child {
+    @apply border-r-0;
+  }
+  
+  /* Hover específico da célula individual - prioridade máxima */
+  .markdown-theme td:hover {
+    @apply bg-accent/30 outline-none;
+  }
+  
+  /* Efeito de highlight suave na linha inteira */
+  .markdown-theme tr:hover td {
+    @apply bg-muted/30;
+  }
+  
+  /* Garante que o hover da célula específica sobrescreva o hover da linha */
+  .markdown-theme tr:hover td:hover {
+    @apply bg-accent/30 outline-none;
+  }
+  
+  /* Primeira célula da linha */
+  .markdown-theme td:first-child {
+    @apply font-medium text-markdown-highlight;
+  }
+  
+  /* Última linha da tabela */
+  .markdown-theme tr:last-child td {
+    @apply border-b-0;
+  }
+  
+  /* Última linha - bordas arredondadas inferiores */
+  .markdown-theme tr:last-child td:first-child {
+    @apply rounded-bl-xl;
+  }
+  
+  .markdown-theme tr:last-child td:last-child {
+    @apply rounded-br-xl;
+  }
+  
+  /* Regra movida para seções específicas acima */
+  
+  /* Efeito zebra sutil para linhas alternadas */
+  .markdown-theme tr:nth-child(even) td {
+    @apply bg-muted/20;
+  }
+  
+  /* Células com alinhamento especial */
+  .markdown-theme td[align="center"],
+  .markdown-theme th[align="center"] {
+    @apply text-center;
+  }
+  
+  .markdown-theme td[align="right"],
+  .markdown-theme th[align="right"] {
+    @apply text-right;
+  }
+  
+  .markdown-theme td[align="left"],
+  .markdown-theme th[align="left"] {
+    @apply text-left;
+  }
+  
+  /* Indicador visual removido para melhor experiência desktop */
+  
+  /* Estilo especial para células com emojis será aplicado automaticamente pelo browser */
+  
+  /* Responsividade melhorada */
+  @media (max-width: 768px) {
+    .markdown-theme table {
+      @apply text-sm;
+    }
+  
+    .markdown-theme th,
+    .markdown-theme td {
+      @apply px-3 py-2;
+    }
+  
+    .markdown-theme th {
+      @apply text-xs;
+    }
+  }
+  
+  
+  /* =========================
+       6. Listas
+       ========================= */
+  
+  /* Container das listas */
+  .markdown-theme ul:not(.contains-task-list),
+  .markdown-theme ol {
+    @apply my-6 pl-12;
+  }
+  
+  /* Itens da lista */
+  .markdown-theme ul:not(.contains-task-list)>li,
+  .markdown-theme ol>li {
+    @apply my-3 px-3 py-2 rounded-lg transition-all duration-200 cursor-pointer relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  
+  /* Bullets personalizados para ul */
+  .markdown-theme ul:not(.contains-task-list)>li {
+    position: relative;
+  }
+  
+  .markdown-theme ul:not(.contains-task-list)>li::marker {
+    content: "● ";
+    @apply text-accent font-bold text-lg;
+  }
+  
+  /* Números personalizados para ol */
+  .markdown-theme ol>li {
+    position: relative;
+  }
+  
+  .markdown-theme ol>li::marker {
+    @apply text-accent font-bold;
+  }
+  
+  /* Sublistas aninhadas */
+  .markdown-theme ul:not(.contains-task-list) ul:not(.contains-task-list),
+  .markdown-theme ol ol,
+  .markdown-theme ul:not(.contains-task-list) ol,
+  .markdown-theme ol ul:not(.contains-task-list) {
+    @apply mt-2 mb-2 pl-8;
+  }
+  
+  /* Bullets para sublistas ul */
+  .markdown-theme ul:not(.contains-task-list) ul:not(.contains-task-list)>li::marker {
+    content: "◦ ";
+    @apply text-accent text-base;
+  }
+  
+  /* Números para sublistas ol */
+  .markdown-theme ol ol>li::marker {
+    @apply text-accent font-bold;
+  }
+  
+  /* Responsividade das listas */
+  @media (max-width: 768px) {
+  
+    .markdown-theme ul:not(.contains-task-list),
+    .markdown-theme ol {
+      @apply pl-8 text-sm;
+    }
+  
+    .markdown-theme ul:not(.contains-task-list)>li,
+    .markdown-theme ol>li {
+      @apply px-2 py-1.5;
+    }
+  }
+  
+  @media (max-width: 480px) {
+  
+    .markdown-theme ul:not(.contains-task-list),
+    .markdown-theme ol {
+      @apply pl-6 text-xs;
+    }
+  
+    .markdown-theme ul:not(.contains-task-list)>li,
+    .markdown-theme ol>li {
+      @apply px-1.5 py-1;
+    }
+  }
+  
+  /* =========================
+       6.1. Listas de Verificação (Checkboxes)
+       ========================= */
+  
+  /* Container da lista de verificação */
+  .markdown-theme ul.contains-task-list {
+    @apply pl-4 my-6;
+  }
+  
+  /* Item da lista de verificação */
+  .markdown-theme li.task-list-item {
+    @apply flex items-start gap-3 my-3 p-2 rounded-lg transition-all duration-200 hover:bg-muted/50 list-none relative;
+  }
+  
+  /* Checkbox personalizado */
+  .markdown-theme input[type="checkbox"] {
+    @apply appearance-none w-5 h-5 border-2 border-markdown-highlight rounded-md bg-background cursor-pointer transition-all duration-200 hover:border-accent hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2 relative flex-shrink-0 mt-0.5;
+  }
+  
+  /* Checkbox marcado */
+  .markdown-theme input[type="checkbox"]:checked {
+    @apply bg-success border-success text-success-foreground;
+  }
+  
+  /* Ícone de check personalizado */
+  .markdown-theme input[type="checkbox"]:checked::after {
+    content: "✓";
+    @apply absolute inset-0 flex items-center justify-center text-sm font-bold text-success-foreground;
+  }
+  
+  /* Texto do item marcado */
+  .markdown-theme li.task-list-item:has(input[type="checkbox"]:checked) {
+    @apply text-muted-foreground;
+  }
+  
+  /* Efeito de riscado no texto quando marcado */
+  .markdown-theme li.task-list-item:has(input[type="checkbox"]:checked)>*:not(input) {
+    @apply line-through opacity-75;
+  }
+  
+  /* Animação de hover para o item completo */
+  .markdown-theme li.task-list-item:hover {
+    @apply transform translate-x-1;
+  }
+  
+  /* Estado de foco para acessibilidade */
+  .markdown-theme li.task-list-item:focus-within {
+    @apply ring-2 ring-accent/30 ring-offset-2;
+  }
+  
+  /* Estilo especial para itens não marcados */
+  .markdown-theme li.task-list-item:has(input[type="checkbox"]:not(:checked)) {
+    @apply border-l-4 border-l-accent/30 bg-accent/5;
+  }
+  
+  /* Estilo especial para itens marcados */
+  .markdown-theme li.task-list-item:has(input[type="checkbox"]:checked) {
+    @apply border-l-4 border-l-success/50 bg-success/5;
+  }
+  
+  /* =========================
+       7. Código
+       ========================= */
+  
+  /* Código inline */
+  .markdown-theme code {
+    @apply text-secondary font-mono font-semibold text-sm px-2 py-1 mx-0.5 rounded-md bg-secondary/10 border border-secondary/20 hover:bg-secondary/90 hover:text-secondary-foreground hover:border-secondary transition-colors duration-200 cursor-pointer;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Remove fundo do código quando está dentro de um bloco pre */
+  .markdown-theme pre code {
+    @apply bg-transparent border-none p-0 text-inherit hover:scale-100 shadow-none hover:shadow-none;
+  }
+  
+  /* Bloco de código */
+  .markdown-theme pre {
+    @apply bg-gradient-to-br from-card/95 to-muted/80 text-markdown-highlight border-l-4 border-l-secondary/40 border border-border/20 p-6 rounded-xl overflow-x-auto font-mono shadow-lg my-6 hover:border-l-secondary hover:bg-gradient-to-br hover:from-secondary/10 hover:to-secondary/5 hover:text-secondary-foreground transition-colors duration-200 cursor-pointer;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Efeito de foco para acessibilidade */
+  .markdown-theme pre:focus-within {
+    @apply ring-2 ring-secondary/30 ring-offset-2 outline-none;
+  }
+  
+  /* Responsividade melhorada */
+  @media (max-width: 768px) {
+    .markdown-theme pre {
+      @apply p-4 text-sm;
+    }
+  }
+  
+  /* =========================
+       8. Linhas horizontais
+       ========================= */
+  .markdown-theme hr {
+    @apply text-markdown-highlight border-markdown-highlight;
+  }
+  
+  /* =========================
+       9. Links
+       ========================= */
+  .markdown-theme a {
+    @apply text-accent no-underline transition-colors duration-200 hover:underline;
+  }
+  
+  /* =========================
+       10. Imagens
+       ========================= */
+  .markdown-theme img {
+    @apply max-w-full block mx-auto my-6 shadow-lg rounded-xl border border-border/20 bg-card p-1 transition-all duration-500 cursor-pointer;
+    /* Desktop: altura menor por padrão, limitada a 40% da altura da tela */
+    max-height: min(20rem, 40vh);
+    object-fit: cover;
+  }
+  
+  /* Hover no desktop - aumenta mas respeitando limites da tela */
+  @media (min-width: 1024px) {
+    .markdown-theme img:hover {
+      @apply shadow-xl;
+      /* No hover: aumenta para até 70% da altura da tela, mas máximo 36rem */
+      max-height: min(36rem, 70vh);
+      transform: scale(1.02);
+    }
+  }
+  
+  /* Responsividade melhorada para imagens */
+  @media (max-width: 1023px) {
+    .markdown-theme img {
+      /* Tablet: altura um pouco maior, sem efeito de hover */
+      max-height: min(24rem, 50vh);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .markdown-theme img {
+      /* Mobile: altura reduzida */
+      max-height: min(20rem, 45vh);
+      @apply my-4 p-0.5;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .markdown-theme img {
+      /* Mobile pequeno: altura bem limitada */
+      max-height: min(16rem, 40vh);
+      @apply rounded-lg;
+    }
+  }
+  
+  /* =========================
+       11. Citações (blockquote)
+       ========================= */
+  .markdown-theme blockquote {
+    @apply border-l-4 border-l-accent/40 pl-6 pr-4 py-4 my-6 text-markdown-highlight bg-gradient-to-br from-card/95 to-muted/80 font-mono rounded-xl shadow-lg border border-border/20 hover:shadow-xl hover:border-l-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 transition-all duration-300 relative;
+  }
+  
+  /* Estilos para elementos dentro das citações */
+  .markdown-theme blockquote p {
+    @apply my-2;
+  }
+  
+  .markdown-theme blockquote p:first-of-type::before,
+  .markdown-theme blockquote p:last-of-type::after {
+    content: none;
+  }
+  
+  .markdown-theme blockquote code {
+    @apply bg-transparent border border-current/20 text-current;
+  }
+  
+  .markdown-theme blockquote strong {
+    @apply text-current;
+  }
+  
+  /* Responsividade melhorada para blockquotes */
+  @media (max-width: 768px) {
+    .markdown-theme blockquote {
+      @apply pl-4 pr-3 py-3 text-sm rounded-lg;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .markdown-theme blockquote {
+      @apply pl-3 pr-2 py-2 text-xs border-l-2;
+    }
+  }
+  
+  /* =========================
+       12. KaTeX (matemática)
+       ========================= */
+  
+  /* Bloco de fórmula */
+  .markdown-theme .katex-display {
+    @apply bg-gradient-to-br from-card/95 to-muted/80 text-markdown-highlight max-w-none rounded-xl ml-4 border-l-4 border-l-accent/40 border border-border/20 shadow-lg hover:shadow-xl overflow-auto whitespace-normal p-6 my-6 relative transition-all duration-300 hover:scale-[1.02] hover:border-l-accent hover:bg-gradient-to-br hover:from-primary/10 hover:to-primary/5 hover:text-markdown-highlight cursor-pointer;
+  }
+  
+  /* Efeito de foco para acessibilidade */
+  .markdown-theme .katex-display:focus-within {
+    @apply ring-2 ring-accent/30 ring-offset-2 outline-none;
+  }
+  
+  
+  
+  /* Responsividade melhorada */
+  @media (max-width: 768px) {
+    .markdown-theme .katex-display {
+      @apply ml-0 p-4 text-sm;
+    }
+  
+  
+  }
+  
+  /* Estilo para fórmulas inline */
+  .markdown-theme :not(.katex-display)>.katex {
+    @apply leading-normal text-sm bg-gradient-to-r from-muted/80 to-card/90 text-markdown-highlight px-3 py-1.5 rounded-lg mx-1 align-middle border border-accent/20 hover:border-accent hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 hover:text-markdown-highlight hover:scale-105 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md;
+  }
+  
+  
+  
+  /* =========================
+       13. Scrollbar personalizado
+       ========================= */
+  
+  /* Esconde a scrollbar em todos os navegadores */
+  * {
+    @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none];
+  }
+  
+  /* Exceção: mostra scrollbar para tabelas markdown */
+  .markdown-theme table {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--markdown-highlight)) hsl(var(--muted));
+    -ms-overflow-style: auto;
+  }
+  
+  .markdown-theme table::-webkit-scrollbar {
+    display: block;
+    height: 10px;
+  }
+  
+  .markdown-theme table::-webkit-scrollbar-track {
+    @apply bg-muted/50 rounded-full border border-border/30;
+  }
+  
+  .markdown-theme table::-webkit-scrollbar-thumb {
+    @apply bg-markdown-highlight/80 rounded-full border-2 border-background hover:bg-markdown-highlight transition-all duration-300 hover:scale-105;
+  }
+  
+  .markdown-theme table::-webkit-scrollbar-corner {
+    @apply bg-muted/50;
+  }
+

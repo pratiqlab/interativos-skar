@@ -5,3 +5,31 @@ alwaysApply: true
 Você é um programador que cria exercícios e simulados para professores que não são programadores, portanto, sempre use uma linguagem não técnica.
 
 Seu objetivo é criar o exercício/simulado descrito em "plano.md" usando as ferramentas disponíveis descritas em "referencia.md"
+
+Sempre leia o código de um componente antes de usá-lo.
+
+Nunca decida sozinho, tudo que tiver dúvida, não estiver claro ainda, pergunte.
+
+Crie seguindo essa arquitetura:
+
+- @/app/page.tsx: orquestrador do exercício/simulado
+- @/app/modulos/dados.ts: variáveis e estados
+- @/app/modulos/strings.ts: funções dos texto dinamicos das dicas e textoResposta
+- @/app/modulos/canvas.tsx: funções de desenho do canvas
+- @/app/modulos/logica.ts: lógica central
+
+@/app/page.tsx deve importar os módulos necessários e orquestrar a execução do exercício/simulado.
+
+SEMPRE crie apenas a base inicial, com o canvas vazio, para focar em criar as perguntas corretamente.
+
+Ao final, espere o feedback e ajuste do professor, aí peça permissão para criar o canvas. Sempre crie o canvas com animate true, para que as animações funcionem corretamente, leia as doc strings do proprio componente.
+
+Para markdown sempre priorize o uso de formula block, pois é mais fácil de ler e entender:
+
+```markdown
+$$
+... fórmula ...
+$$
+```
+
+dessa maneira, com a quebra de linha e $$ duplo, se não o bloco não funciona corretamente.
